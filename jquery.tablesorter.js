@@ -667,7 +667,8 @@
 			
 			this.isDigit = function(s,config) {
 				var DECIMAL = '\\' + config.decimal;
-				var exp = '/(^[+]?0(' + DECIMAL +'0+)?$)|(^([-+]?[1-9][0-9]*)$)|(^([-+]?((0?|[1-9][0-9]*)' + DECIMAL +'(0*[1-9][0-9]*)))$)|(^[-+]?[1-9]+[0-9]*' + DECIMAL +'0+$)/';
+				var exp = '^[-+]?(0|[1-9][0-9]*)(' + DECIMAL +'[0-9]+)?$';
+
 				return RegExp(exp).test($.trim(s));
 			};
 			
